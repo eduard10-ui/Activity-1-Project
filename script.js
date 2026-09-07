@@ -117,7 +117,7 @@ loginForm.addEventListener("submit", function(event) {
         showModal("Login successful!", "Welcome, " + username + "!"); 
         loginForm.reset(); 
     } else { 
-        showModal("Error", "Invalid username or password."); 
+        showModal("Invalid username or password."); 
     } 
 }); 
  
