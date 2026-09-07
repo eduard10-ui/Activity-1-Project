@@ -9,3 +9,4 @@ A simple browser-based login and sign-up system created using HTML, CSS, and Jav
 
 Reflection:
 The git add command is used to prepare or stage the changes that I want to include in my next commit. It tells Git which files or changes should be included. On the other hand, the git commit command saves the staged changes as a version in the Git repository. In simple terms, git add prepares the changes, while git commit permanently records those prepared changes in the project's Git history.
+
