@@ -7,57 +7,61 @@
 <body>
 
     <h1>Welcome</h1>
+    <div id="loginDiv" style="display: none;">
+        <h2>Login</h2>
 
-    <h2>Login</h2>
+        <form id="loginForm">
+            <label>Username:</label>
+            <input type="text" name="login_username" id="loginUsername">
 
-    <form>
-        <label>Username:</label>
-        <input type="text" name="login_username">
+            <br><br>
 
-        <br><br>
+            <label>Password:</label>
+            <input type="password" name="login_password" id="loginPassword">
 
-        <label>Password:</label>
-        <input type="password" name="login_password">
+            <br><br>
 
-        <br><br>
+            <label>
+                <input type="password" name="login_password" id="loginPassword">
+                Remember Me 
+            </label>
 
-        <label>
-            <input type="checkbox" name="remember">
-            Remember Me
-        </label>
 
-        <br><br>
+            <button type="submit">Login</button>
+        </form>
+        <hr>
+        <button id="signup_button">SIGN UP HERE</button>
+    </div>
 
-        <button type="submit">Login</button>
-    </form>
+    <div id="signupDiv">
+        <h2>Sign Up</h2>
+        <form id="signupForm"> 
+            <label>Username:</label>
+            <input type="text" name="signup_username" id="signupUsername">
 
-    <hr>
+            <br><br>
 
-    <h2>Sign Up</h2>
+            <label>Email:</label>
+            <input type="email" name="signup_email" id="signupEmail"> 
 
-    <form>
-        <label>Username:</label>
-        <input type="text" name="signup_username">
+            <br><br>
 
-        <br><br>
+            <label>Password:</label>
+            <input type="password" name="signup_password" id="signupPassword">
 
-        <label>Email:</label>
-        <input type="email" name="signup_email">
+            <br><br>
 
-        <br><br>
+            <label>Confirm Password:</label>
+            <input type="password" name="confirm_password" id="confirmPassword">
 
-        <label>Password:</label>
-        <input type="password" name="signup_password">
+            <br><br>
 
-        <br><br>
+            <button type="submit">Sign Up</button>
+        </form>
+        <button id="login_button">LOGIN HERE</button>
+    </div>
 
-        <label>Confirm Password:</label>
-        <input type="password" name="confirm_password">
-
-        <br><br>
-
-        <button type="submit">Sign Up</button>
-    </form>
-
+    <script src="script.js"></script>
 </body>
+
 </html>
