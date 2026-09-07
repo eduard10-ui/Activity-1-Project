@@ -5,6 +5,26 @@ const loginDiv = document.getElementById("loginDiv");
 const signupDiv = document.getElementById("signupDiv"); 
 const loginButton = document.getElementById("login_button"); 
 const signupButton = document.getElementById("signup_button"); 
+const messageModal = document.getElementById("messageModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalMessage = document.getElementById("modalMessage");
+const modalClose = document.getElementById("modalClose");
+
+function showModal(message, title = "Oops!") {
+    modalTitle.textContent = title;
+    modalMessage.textContent = message;
+    messageModal.style.display = "flex";
+}
+
+modalClose.addEventListener("click", function() {
+    messageModal.style.display = "none";
+});
+
+messageModal.addEventListener("click", function(event) {
+    if (event.target === messageModal) {
+        messageModal.style.display = "none";
+    }
+});
 
 signupForm.addEventListener("submit", function(event) { 
     event.preventDefault(); 
@@ -15,49 +35,49 @@ signupForm.addEventListener("submit", function(event) {
     const confirmPassword = document.getElementById("confirmPassword").value; 
  
     if (username === "" || email === "" || password === "" || confirmPassword === "") { 
-        alert("Please complete all fields."); 
+        showModal("Please complete all fields."); 
         return; 
     } 
 
     if (username.length < 3) {
-        alert("Username must be at least 3 characters.");
+        showModal("Username must be at least 3 characters.");
         return;
     }
 
     if (username.includes(" ")) {
-        alert("Username cannot contain spaces.");
+        showModal("Username cannot contain spaces.");
         return;
     }
 
     if (!email.includes("@") || !email.includes(".")) {
-        alert("Please enter a valid email address.");
+        showModal("Please enter a valid email address.");
         return;
     }
 
     if (password.length < 8) {
-        alert("Password must be at least 8 characters.");
+        showModal("Password must be at least 8 characters.");
         return;
     }
 
     if (!/[A-Z]/.test(password)) {
-        alert("Password must contain at least one uppercase letter.");
+        showModal("Password must contain at least one uppercase letter.");
         return;
     }
 
     if (!/[0-9]/.test(password)) {
-        alert("Password must contain at least one number.");
+        showModal("Password must contain at least one number.");
         return;
     }
  
     if (password !== confirmPassword) { 
-        alert("Passwords do not match."); 
+        showModal("Passwords do not match."); 
         return; 
     } 
 
     const savedUsername = localStorage.getItem("username");
 
     if (username === savedUsername) {
-        alert("Username already exists.");
+        showModal("Username already exists.");
         return;
     }
  
@@ -65,7 +85,7 @@ signupForm.addEventListener("submit", function(event) {
     localStorage.setItem("email", email); 
     localStorage.setItem("password", password); 
  
-    alert("Sign up successful!"); 
+    showModal("Sign up successful!"); 
  
     signupForm.reset(); 
     signupDiv.style.display = "none"; 
@@ -84,20 +104,20 @@ loginForm.addEventListener("submit", function(event) {
     const savedPassword = localStorage.getItem("password"); 
  
     if (username === "" || password === "") {
-        alert("Please enter your username and password.");
+        showModal("Please enter your username and password.");
         return;
     }
 
     if (savedUsername === null || savedPassword === null) {
-        alert("No account found. Please sign up first.");
+        showModal("No account found. Please sign up first.");
         return;
     }
  
     if (username === savedUsername && password === savedPassword) { 
-        alert("Login successful! Welcome, " + username + "!"); 
+        showModal("Login successful! Welcome, " + username + "!"); 
         loginForm.reset(); 
     } else { 
-        alert("Invalid username or password."); 
+        showModal("Invalid username or password."); 
     } 
 }); 
  
