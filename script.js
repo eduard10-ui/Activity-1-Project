@@ -10,7 +10,7 @@ const modalTitle = document.getElementById("modalTitle");
 const modalMessage = document.getElementById("modalMessage");
 const modalClose = document.getElementById("modalClose");
 
-function showModal(message, title = "Oops!") {
+function showModal(title, message) {
     modalTitle.textContent = title;
     modalMessage.textContent = message;
     messageModal.style.display = "flex";
@@ -35,49 +35,49 @@ signupForm.addEventListener("submit", function(event) {
     const confirmPassword = document.getElementById("confirmPassword").value; 
  
     if (username === "" || email === "" || password === "" || confirmPassword === "") { 
-        showModal("Please complete all fields."); 
+        showModal("Oops!","Please complete all fields."); 
         return; 
     } 
 
     if (username.length < 3) {
-        showModal("Username must be at least 3 characters.");
+        showModal("Invalid Username","Username must be at least 3 characters.");
         return;
     }
 
     if (username.includes(" ")) {
-        showModal("Username cannot contain spaces.");
+        showModal("Invalid Username","Username cannot contain spaces.");
         return;
     }
 
     if (!email.includes("@") || !email.includes(".")) {
-        showModal("Please enter a valid email address.");
+        showModal("Invalid Email","Please enter a valid email address.");
         return;
     }
 
     if (password.length < 8) {
-        showModal("Password must be at least 8 characters.");
+        showModal("Invalid Password","Password must be at least 8 characters.");
         return;
     }
 
     if (!/[A-Z]/.test(password)) {
-        showModal("Password must contain at least one uppercase letter.");
+        showModal("Invalid Password","Password must contain at least one uppercase letter.");
         return;
     }
 
     if (!/[0-9]/.test(password)) {
-        showModal("Password must contain at least one number.");
+        showModal("Invalid Password","Password must contain at least one number.");
         return;
     }
  
     if (password !== confirmPassword) { 
-        showModal("Passwords do not match."); 
+        showModal("Invalid Password","Passwords do not match."); 
         return; 
     } 
 
     const savedUsername = localStorage.getItem("username");
 
     if (username === savedUsername) {
-        showModal("Username already exists.");
+        showModal("Username already exists.","Please choose a different username.");
         return;
     }
  
@@ -85,7 +85,7 @@ signupForm.addEventListener("submit", function(event) {
     localStorage.setItem("email", email); 
     localStorage.setItem("password", password); 
  
-    showModal("Sign up successful!"); 
+    showModal("Sign up successful!", "You have been signed up successfully!"); 
  
     signupForm.reset(); 
     signupDiv.style.display = "none"; 
@@ -104,20 +104,20 @@ loginForm.addEventListener("submit", function(event) {
     const savedPassword = localStorage.getItem("password"); 
  
     if (username === "" || password === "") {
-        showModal("Please enter your username and password.");
+        showModal("Oops!","Please enter your username and password.");
         return;
     }
 
     if (savedUsername === null || savedPassword === null) {
-        showModal("No account found. Please sign up first.");
+        showModal("No account found", "Please sign up first.");
         return;
     }
  
     if (username === savedUsername && password === savedPassword) { 
-        showModal("Login successful! Welcome, " + username + "!"); 
+        showModal("Login successful!", "Welcome, " + username + "!"); 
         loginForm.reset(); 
     } else { 
-        showModal("Invalid username or password."); 
+        showModal("Error", "Invalid username or password."); 
     } 
 }); 
  
