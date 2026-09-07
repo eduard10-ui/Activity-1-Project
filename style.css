@@ -1,6 +1,4 @@
-/* =========================================
-   1. Reset & Clay Canvas Setup
-   ========================================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,14 +17,9 @@ body {
     padding: 24px;
     color: #2d3748;
     overflow-x: hidden;
-
-    /* Soft Warm Pastel Background */
     background-color: #f3f0ff;
 }
 
-/* =========================================
-   2. Flat & Playful Typography
-   ========================================= */
 h1 {
     font-size: 2.2rem;
     font-weight: 800;
@@ -37,8 +30,8 @@ h1 {
 }
 
 h2 {
-    font-size: 1.4rem;
-    font-weight: 700;
+    font-size: 1.8rem;
+    font-weight: 900;
     letter-spacing: -0.01em;
     text-align: center;
     margin-bottom: 20px;
@@ -47,8 +40,8 @@ h2 {
 
 label {
     display: block;
-    font-size: 0.85rem;
-    font-weight: 700;
+    font-size: 0.9rem;
+    font-weight: 800;
     letter-spacing: 0.01em;
     color: #6366f1;
     margin-top: -9px;
@@ -57,17 +50,12 @@ label {
     text-transform: uppercase;
 }
 
-/* =========================================
-   3. Claymorphism Card Container
-   ========================================= */
 #loginDiv, #signupDiv {
     width: 100%;
     max-width: 420px;
     background: #eef2ff;
     border-radius: 36px;
     padding: 36px 32px;
-    
-    /* Double Extruded Soft Clay Shadows */
     box-shadow: 
         16px 16px 32px #c7d2fe,
         -16px -16px 32px #ffffff,
@@ -92,9 +80,6 @@ form br {
     display: none;
 }
 
-/* =========================================
-   4. Recessed Clay Inputs & Forms
-   ========================================= */
 form {
     display: flex;
     flex-direction: column;
@@ -114,8 +99,6 @@ input[type="password"] {
     border-radius: 20px;
     outline: none;
     transition: all 0.2s ease;
-
-    /* Recessed Inner Clay Shadow */
     box-shadow: 
         inset 4px 4px 8px #c7d2fe,
         inset -4px -4px 8px #ffffff;
@@ -126,7 +109,6 @@ input::placeholder {
     font-weight: 500;
 }
 
-/* Input Focus State */
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus {
@@ -138,7 +120,6 @@ input[type="password"]:focus {
         0 0 0 4px rgba(99, 102, 241, 0.2);
 }
 
-/* Checkbox Styling */
 label:has(input[type="checkbox"]),
 form label > input[type="checkbox"] {
     display: flex;
@@ -160,14 +141,11 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-/* =========================================
-   5. Extruded Soft Clay Buttons
-   ========================================= */
 button {
     width: 100%;
     padding: 16px 24px;
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 900;
     border-radius: 24px;
     cursor: pointer;
     border: none;
@@ -176,22 +154,18 @@ button {
     margin-top: 15px;
 }
 
-/* Primary Submit Button: Soft Vibrant Coral/Pink Clay */
 form button[type="submit"] {
     background: #2a23ab;
     color: #f1eded;
-    
     box-shadow: 
         6px 6px 12px #ebe2e2,
         -6px -6px 12px #ffffff,
         inset 2px 2px 3px rgba(255, 255, 255, 0.8);
-
 }
 
 form button[type="submit"]:hover {
     background: #4f46e5;
     transform: translateY(-2px);
- 
 }
 
 form button[type="submit"]:active {
@@ -201,7 +175,6 @@ form button[type="submit"]:active {
         inset -3px -3px 6px #ff859b;
 }
 
-/* Flat Divider */
 hr {
     margin: 22px 0;
     border: 0;
@@ -210,12 +183,10 @@ hr {
     border-radius: 999px;
 }
 
-/* Secondary Action Buttons */
 #signup_button,
 #login_button {
     background: #e0e7ff;
     color: #4338ca;
-    
     box-shadow: 
         6px 6px 12px #c7d2fe,
         -6px -6px 12px #ffffff,
@@ -239,3 +210,4 @@ hr {
         inset 3px 3px 6px #a5b4fc,
         inset -3px -3px 6px #ffffff;
 }
+
