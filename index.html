@@ -17,8 +17,10 @@
             <br><br>
 
             <label>Password:</label>
-            <input type="password" name="login_password" id="loginPassword" autocomplete="off">
-
+            <div class="password-container">
+                <input type="password" name="login_password" id="loginPassword" autocomplete="off">
+                <button type="button" class="show-password" onclick="togglePassword('loginPassword', this)">Show</button>
+            </div>
             <br><br>
 
     
@@ -43,12 +45,18 @@
             <br><br>
 
             <label>Password:</label>
-            <input type="password" name="signup_password" id="signupPassword">
+            <div class="password-container">
+                <input type="password" name="signup_password" id="signupPassword">
+                <button type="button" class="show-password" onclick="togglePassword('signupPassword', this)">Show</button>
+            </div>
 
             <br><br>
 
             <label>Confirm Password:</label>
-            <input type="password" name="confirm_password" id="confirmPassword">
+            <div class="password-container">
+                <input type="password" name="confirm_password" id="confirmPassword">
+                <button type="button" class="show-password" onclick="togglePassword('confirmPassword', this)">Show</button>
+            </div>
 
             <br><br>
 

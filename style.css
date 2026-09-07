@@ -211,3 +211,32 @@ hr {
         inset -3px -3px 6px #ffffff;
 }
 
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    padding-right: 80px;
+}
+
+.show-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    margin: 0;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    background: transparent;
+    color: #4338ca;
+    box-shadow: none;
+}
+
+.show-password:hover {
+    background: transparent;
+    color: #312e81;
+    transform: translateY(-50%);
+    box-shadow: none;
+}
